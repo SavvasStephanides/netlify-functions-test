@@ -6,7 +6,8 @@ exports.handler = async function(event, context) {
         body: JSON.stringify({
             message: "Hello World",
             version: 2,
-            myCookie: cookie.my_cookie
+            event: event,
+            context: context
         })
     };
 }
