@@ -1,13 +1,13 @@
 const cookie = require('cookie')
 
 exports.handler = async function(event, context) {
+    var cookies = cookie.parse(req.headers.cookie || '');
     return {
         statusCode: 200,
         body: JSON.stringify({
             message: "Hello World",
             version: 2,
-            event: event,
-            context: context
+            myCookie: cookies.my_cookie
         })
     };
 }
